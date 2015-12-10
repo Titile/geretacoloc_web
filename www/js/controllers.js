@@ -41,7 +41,6 @@ angular.module('app.controllers', [])
 
 })
 
-
 .controller('ChargesCtrl', function($scope,$http, $ionicPopup) {
 
   $scope.showPopup_ajouter_charge = function() {
@@ -63,6 +62,7 @@ angular.module('app.controllers', [])
 
               console.log($scope.data.nom_charge);
               console.log($scope.data.montant_charge);
+
               $http.get('colocataires/coloc.json').success(function(data_out) {
                 var coloc = data_out;
 
@@ -75,18 +75,9 @@ angular.module('app.controllers', [])
         }
       ]
     });
-
-    // $timeout(function() {
-    //   popupCharge.close(); //close the popup after 3 seconds for some reason
-    // }, 1000000);
-
-};
-
-
-
+  };
 
 })
-
 
 .controller('ColocListCtrl', ['$scope', '$http', function($scope, $http) {
 
@@ -109,63 +100,46 @@ angular.module('app.controllers', [])
     });
     $scope.nb_users = nb_users;
 
+
   });
   $scope.orderProp = 'name';
 
-}]);
-// .controller("CalendarEventController", function ($scope, EventService) {
-//
-//     EventService.getEvents().then(function (events) {
-//         $scope.events = events;
-//     });
-// });
-//
-// .controller('CalendarPopupController', function ($scope, $ionicPopup, $timeout) {
-//
-//       // Triggered on a button click, or some other target
-//       $scope.showPopup = function ($event, day) {
-//           $scope.data = {}
-//
-//           if (day.events.length > 0) {
-//               //show popup only if events on day cell
-//
-//               var $element = $event.currentTarget;
-//
-//               // An elaborate, custom popup
-//               var myPopup = $ionicPopup.show({
-//                   templateUrl: 'templates/calendar/calendar-event-popup-template.html',
-//                   title: '' + day.date,
-//                   subTitle: '',
-//                   scope: $scope,
-//                   buttons: [{
-//                       text: '<b>Close</b>',
-//                       type: 'button-positive',
-//                       onTap: function (e) {
-//                           return 'cancel button'
-//                       }
-//                   }, ]
-//               });
-//               myPopup.then(function (res) {
-//
-//               });
-//           }
-//
-//       };
-//
-//       $scope.sendEvent = function () {
-//           var startDate = new Date(2014, 10, 15, 18, 30, 0, 0, 0); // beware: month 0 = january, 11 = december
-//           var endDate = new Date(2014, 10, 15, 19, 30, 0, 0, 0);
-//           var title = "My nice event";
-//           var location = "Home";
-//           var notes = "Some notes about this event.";
-//           var success = function (message) {
-//               alert("Success: " + JSON.stringify(message));
-//           };
-//           var error = function (message) {
-//               alert("Error: " + message);
-//           };
-//
-//           window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,success,error);
-//       }
-//
-//   });
+}])
+
+.controller('ReglesCtrl', function($scope) {
+
+
+  // angular.forEach($scope.coloc.users, function(value,key){
+  //   nb_users++;
+  // });
+  $scope.data= {};
+
+
+  var nvl_regle="";
+  $scope.ajouterRegle = function(){
+      nvl_regle=$scope.data.nouvelle_regle;
+  }
+  $scope.new_regle = nvl_regle;
+
+
+})
+
+
+/*----------------------------------------------------------------------
+
+                      GESTION DU CALENDRIER
+
+// ---------------------------------------------------------------------*/
+
+.controller('DateCtrl', function($scope,$http ){
+
+  $http.get('colocataires/calendar_gestion.json').success(function(data) {
+    $scope.date = data;
+    console.log(data)
+
+  });
+
+  $scope.mois_actuel = new Date();
+
+
+})

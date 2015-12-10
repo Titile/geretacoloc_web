@@ -30,6 +30,12 @@ angular.module('app.routes', [])
       controller: 'menuCtrl'
     })
 
+    .state('colocataires', {
+      url: '/colocataires',
+      abstract:true,
+      controller: 'ColocListCtrl'
+    })
+
     .state('menu', {
       url: '/menu',
       abstract:true,
@@ -42,18 +48,23 @@ angular.module('app.routes', [])
       controller: 'ColocListCtrl'
     })
 
-    .state('colocataires', {
-      url: '/colocataires',
-      abstract:true,
-      controller: 'ColocListCtrl'
-    })
-
     .state('taches', {
       url: '/menu/taches',
-      templateUrl: 'templates/taches.html',
-      controller: 'TachesCtrl'
+      templateUrl: 'templates/Calendar/calendar-template.html',
+      controller: 'DateCtrl'
     })
 
+    .state('regles', {
+      url: '/menu/regles',
+      templateUrl: 'templates/regles.html',
+      controller: 'ReglesCtrl'
+    })
+
+    .state('notes', {
+      url: '/menu/notes',
+      templateUrl: 'templates/notes.html',
+      controller: 'ColocListCtrl'
+    })
 
     ;
 

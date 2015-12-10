@@ -41,8 +41,7 @@
                       <div class="user-description">{{user.description}}</div>
                     </div>
 
-                    <ion-delete-button class="ion-minus-circled"
-                                       ng-click="coloc.splice($index, 1)">
+                    <ion-delete-button class="ion-minus-circled" ng-click="coloc.splice($index, 1)">
                     </ion-delete-button>
                   </ion-item>
                 </ion-list>
@@ -69,11 +68,17 @@
                 <h2>Tâches</h2>
                 <p> Fais tes tâches là!!!</p></a>
 
-                <a class="item item-avatar" href="#/menu/charges">
-                  <img src="img_source/regle_de_vie.jpg">
-                  <h2>Règle de vie</h2>
-                  <p>Teuh teuh teuh, règlements!!!</p></a>
-              <a menu-close="" href="#/menu/charges" class="button button-full button-stable">Adminstratif</a>
+              <a class="item item-avatar" href="#/menu/regles">
+                <img src="img_source/regle_de_vie.jpg">
+                <h2>Règle de vie</h2>
+                <p>Teuh teuh teuh, règlements!!!</p></a>
+
+              <a href="#/menu/notes" class="item item-avatar">
+                <img src="img_source/notes.jpg">
+                <h2>Notes</h2>
+                <p>Liste de courses, Rappels</p></a>
+
+
             </div>
             </ion-list>
           </ion-content>

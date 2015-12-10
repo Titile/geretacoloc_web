@@ -44,8 +44,56 @@
 
   ],
 
-  "notes":[],
-  "regles":[],
+  "notes":[
+    {
+      "id":"1",
+      "content":"appeler le monsieur du 2 ",
+      "date":"3 décembre 2015 12:45"
+    },
+    {
+      "id":"2",
+      "content":"Recuperer la montre de bibi",
+      "date":"6 décembre 2015 12:45"
+    },
+    {
+      "id":"3",
+      "content":"Sortir les poubelles de mme B",
+      "date":"9 décembre 2015 12:45"
+    },
+    {
+      "id":"4",
+      "content":"IJZFIKNFPOJAODKMLJSMODLKMSLKDZ",
+      "date":"17 décembre 2015 12:45"
+    },
+    {
+      "id":"5",
+      "content":"chien",
+      "date":"20 décembre 2015 12:45"
+    },
+    {
+      "id":"6",
+      "content":"recupérer gateau du dimanche ",
+      "date":"25 décembre 2015 12:45"
+    }
+
+  ],
+  "regles":[
+    {
+      "id":"1",
+      "content":"pas de chaussure dans la maison",
+      "number":"1"
+    },
+    {
+      "id":"2",
+      "content":"pas plus de 5 affaires dans le salon",
+      "number":"2"
+    },
+    {
+      "id":"3",
+      "content":"Sortir les poubelles",
+      "number":"3"
+    }
+  ],
   "charges":[
     {
       "id":"1",

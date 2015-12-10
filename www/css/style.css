@@ -76,3 +76,28 @@ p#mont-tot-pers{
   font-size: 1.1em;
   color:orange;
 }
+
+/*Style dans le fichier regle.html*/
+p#Numero-regle{
+  float: left;
+  border:1px;
+  border-color:black;
+  color: grey;
+  font-size: 12px;
+}
+
+p#Content-regle{
+  padding-left: 1em;
+  font-size: 13px;
+}
+
+.note{
+  width: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.row{
+  font-size: :29px;
+}
